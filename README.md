@@ -86,6 +86,6 @@ These are the parts specific to this project.
 - `subjects`\* (hierarchical thesaurus)
 - `date` (HistoricalDate)
 - `color`\* (string, thesaurus)
-- `links` ([]):
-  - `graffitiId`\* (string)
-  - `reason`\* (string, thesaurus)
+- `links` (`TaggedId`[]):
+  - `id`\* (string): graffiti ID.
+  - `tag`\* (string, thesaurus): the reason for the link.
