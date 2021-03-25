@@ -17,6 +17,7 @@
 
   <ItemGroup>
     <PackageReference Include="Cadmus.Core" Version="2.3.5" />
+    <PackageReference Include="Cadmus.Itinera.Parts" Version="1.1.8" />
     <PackageReference Include="Fusi.Antiquity" Version="1.2.0" />
   </ItemGroup>
 
