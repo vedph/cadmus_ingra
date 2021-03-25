@@ -65,6 +65,7 @@ These are the parts specific to this project.
 
 - `prisonerId`\* (`string`)
 - `prisonId`\* (`string`)
+- `sex` (`string`): `M`, `F`, or unknown.
 - `name`\* (`PersonName`, same as in Itinera):
   - `language`\* (`string` = code from [ISO 639-3](https://en.wikipedia.org/wiki/ISO_639-3), thesaurus)
   - `tag` (`string`, optionally from thesaurus): optional tag used to group names, typically used when a person has several names.
@@ -75,7 +76,7 @@ These are the parts specific to this project.
 - `deathDate` (`HistoricalDate`)
 - `origin` (`string`)
 - `charge` (`string`, thesaurus)
-- `outcome` (`string`, thesaurus)
+- `judgement` (`string`, thesaurus)
 - `detentionStart` (`HistoricalDate`)
 - `detentionEnd` (`HistoricalDate`)
 
