@@ -1,8 +1,6 @@
 ﻿using Bogus;
 using Cadmus.Itinera.Parts;
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Cadmus.Seed.Ingra.Parts
 {
@@ -31,6 +29,27 @@ namespace Cadmus.Seed.Ingra.Parts
             }
 
             return refs;
+        }
+
+        public static PersonName GetPersonName()
+        {
+            return new Faker<PersonName>()
+                .RuleFor(pn => pn.Language, "eng")
+                .RuleFor(pn => pn.Parts, f =>
+                    new List<PersonNamePart>(new[]
+                    {
+                        new PersonNamePart
+                        {
+                            Type = "first",
+                            Value = f.Person.FirstName,
+                        },
+                        new PersonNamePart
+                        {
+                            Type = "last",
+                            Value = f.Person.LastName,
+                        }
+                    }))
+                .Generate();
         }
     }
 }
