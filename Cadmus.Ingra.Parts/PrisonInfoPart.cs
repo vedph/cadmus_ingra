@@ -35,7 +35,7 @@ namespace Cadmus.Ingra.Parts
             DataPinBuilder builder = new DataPinBuilder(
                 DataPinHelper.DefaultFilter);
 
-            builder.AddValue("id", Id);
+            builder.AddValue("id", PrisonId);
             if (!string.IsNullOrEmpty(Place))
                 builder.AddValue("place", Place, filter: true, filterOptions: true);
 

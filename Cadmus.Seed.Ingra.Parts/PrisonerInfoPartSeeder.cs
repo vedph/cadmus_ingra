@@ -33,8 +33,8 @@ namespace Cadmus.Seed.Ingra.Parts
             int birth = Randomizer.Seed.Next(1500, 1520);
 
             PrisonerInfoPart part = new Faker<PrisonerInfoPart>()
-                .RuleFor(p => p.PrisonerId, f => f.Lorem.Word())
-                .RuleFor(p => p.PrisonId, f => f.Lorem.Word())
+                .RuleFor(p => p.PrisonerId, f => f.Lorem.Word().ToLowerInvariant())
+                .RuleFor(p => p.PrisonId, f => f.Lorem.Word().ToLowerInvariant())
                 .RuleFor(p => p.Sex, f => f.PickRandom('M', 'F'))
                 .RuleFor(p => p.Name, SeederHelper.GetPersonName())
                 .RuleFor(p => p.BirthDate, HistoricalDate.Parse($"{birth} AD"))

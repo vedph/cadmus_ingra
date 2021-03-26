@@ -47,7 +47,7 @@ namespace Cadmus.Seed.Ingra.Parts
                 throw new ArgumentNullException(nameof(item));
 
             GraffitiInfoPart part = new Faker<GraffitiInfoPart>()
-                .RuleFor(p => p.GraffitiId, f => f.Lorem.Word())
+                .RuleFor(p => p.GraffitiId, f => f.Lorem.Word().ToLowerInvariant())
                 .RuleFor(p => p.Language, f => f.PickRandom("ita", "lat"))
                 .RuleFor(p => p.Verse, f => f.PickRandom(null, "7s"))
                 .RuleFor(p => p.Rhyme, f => f.PickRandom("AABB", "ABAB"))

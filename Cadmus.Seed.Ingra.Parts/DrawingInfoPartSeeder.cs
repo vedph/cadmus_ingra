@@ -44,8 +44,8 @@ namespace Cadmus.Seed.Ingra.Parts
                     {
                         new TaggedId
                         {
-                            Id = f.Lorem.Word(),
-                            Tag = f.Lorem.Word()
+                            Id = f.Lorem.Word().ToLowerInvariant(),
+                            Tag = f.Lorem.Word().ToLowerInvariant()
                         }
                     }) : null)
                 .Generate();
