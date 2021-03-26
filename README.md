@@ -67,25 +67,25 @@ These are the parts specific to this project.
 - `prisonId`\* (`string`)
 - `sex` (`string`): `M`, `F`, or unknown.
 - `name`\* (`PersonName`, same as in Itinera):
-  - `language`\* (`string` = code from [ISO 639-3](https://en.wikipedia.org/wiki/ISO_639-3), thesaurus)
-  - `tag` (`string`, optionally from thesaurus): optional tag used to group names, typically used when a person has several names.
+  - `language`\* (`string` = code from [ISO 639-3](https://en.wikipedia.org/wiki/ISO_639-3), thesaurus: `languages`)
+  - `tag` (`string`, optionally from thesaurus: `person-name-tags`): optional tag used to group names, typically used when a person has several names.
   - `parts`\* (`PersonNamePart[]`):
-  - `type`\* (`string`, thesaurus): e.g. first name, last name, etc. Types are not unique in a name: for instance, you might have a person with 2 first names.
+  - `type`\* (`string`, thesaurus: `person-name-types`): e.g. first name, last name, etc. Types are not unique in a name: for instance, you might have a person with 2 first names.
   - `value`\* (`string`)
 - `birthDate` (`HistoricalDate`)
 - `deathDate` (`HistoricalDate`)
 - `origin` (`string`)
-- `charge` (`string`, thesaurus)
-- `judgement` (`string`, thesaurus)
+- `charge` (`string`, thesaurus: `trial-charges`)
+- `judgement` (`string`, thesaurus: `trial-judgements`)
 - `detentionStart` (`HistoricalDate`)
 - `detentionEnd` (`HistoricalDate`)
 
 #### DrawingInfoPart
 
 - `description`\* (string, MD)
-- `subjects`\* (hierarchical thesaurus)
+- `subjects`\* (hierarchical thesaurus: `drawing-subjects`)
 - `date` (HistoricalDate)
-- `color`\* (string, thesaurus)
+- `color`\* (string, thesaurus: `drawing-colors`)
 - `links` (`TaggedId`[]):
   - `id`\* (string): graffiti ID.
-  - `tag`\* (string, thesaurus): the reason for the link.
+  - `tag`\* (string, thesaurus: `link-reasons`): the reason for the link.
