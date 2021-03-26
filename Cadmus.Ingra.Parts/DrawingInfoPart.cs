@@ -62,10 +62,7 @@ namespace Cadmus.Ingra.Parts
                 DataPinHelper.DefaultFilter);
 
             if (Subjects?.Count > 0)
-            {
-                builder.AddValues("subject",
-                    Subjects, filter: true, filterOptions: true);
-            }
+                builder.AddValues("subject", Subjects);
 
             if (Date != null)
                 builder.AddValue("date-value", Date.GetSortValue());
@@ -90,7 +87,7 @@ namespace Cadmus.Ingra.Parts
                 new DataPinDefinition(DataPinValueType.String,
                    "subject",
                    "The list of subjects in the drawing.",
-                   "Mf"),
+                   "M"),
                 new DataPinDefinition(DataPinValueType.Decimal,
                    "date",
                    "The drawing's date."),
