@@ -4,35 +4,35 @@
 
 ### Prison Item
 
-- `PrisonInfoPart`\*
-- `BibliographyPart`
-- `DocReferencesPart`
+- `PrisonInfoPart`\* (`it.vedph.ingra.prison-info`)
+- `BibliographyPart` (`it.vedph.bibliography`)
+- `DocReferencesPart` (`it.vedph.itinera.doc-references`)
 
 ### Prisoner Item
 
-- `PrisonerInfoPart`\*
-- `BibliographyPart`
+- `PrisonerInfoPart`\* (`it.vedph.ingra.prisoner-info`)
+- `BibliographyPart` (`it.vedph.bibliography`)
 
 ### Graffiti Item
 
-- `GraffitiInfoPart`\*
-- `PrisonLocationPart`\*
-- `TextPart`\*: normalized text.
-- `BibliographyPart`
-- `CategoriesPart`
-- `CommentPart`
-- `NotePart` with role=`palg`: paleographic note.
+- `GraffitiInfoPart`\* (`it.vedph.ingra.graffiti-info`)
+- `PrisonLocationPart`\* (`it.vedph.ingra.prison-location`)
+- `TextPart`\*: normalized text. (`it.vedph.token-text`)
+- `BibliographyPart` (`it.vedph.bibliography`)
+- `CategoriesPart`  (`it.vedph.categories`)
+- `CommentPart` (`it.vedph.comment`)
+- `NotePart` with role=`palg`: paleographic note. (`it.vedph.note`)
 
 Layers:
 
-- `ApparatusLayerPart`
-- `CommentLayerPart`
+- `ApparatusLayerPart` (`fr.it.vedph.apparatus`)
+- `CommentLayerPart` (`fr.it.vedph.comment`)
 
 ### Drawing Item
 
-- `DrawingInfoPart`\*
-- `PrisonLocationPart`\*
-- `BibliographyPart`
+- `DrawingInfoPart`\* (`it.vedph.ingra.drawing-info`)
+- `PrisonLocationPart`\* (`it.vedph.ingra.prison-location`)
+- `BibliographyPart` (`it.vedph.bibliography`)
 
 ### Parts
 
