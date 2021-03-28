@@ -46,8 +46,8 @@ These are the parts specific to this project.
 #### GraffitiInfoPart
 
 - `graffitiId`\* (`string`)
-- `language`\* (`string`)
-- `verse` (`string`)
+- `language`\* (`string`: thesaurus: `graffiti-languages`)
+- `verse` (`string`: thesaurus: `graffiti-verses`)
 - `rhyme` (`string`)
 - `author` (`string`)
 - `identifications` (`RankedId[]`):
