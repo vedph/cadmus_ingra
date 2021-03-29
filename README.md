@@ -67,7 +67,7 @@ These are the parts specific to this project.
 - `prisonId`\* (`string`)
 - `sex` (`string`): `M`, `F`, or unknown.
 - `name`\* (`PersonName`, same as in Itinera):
-  - `language`\* (`string` = code from [ISO 639-3](https://en.wikipedia.org/wiki/ISO_639-3), thesaurus: `languages`)
+  - `language`\* (`string` = code from [ISO 639-3](https://en.wikipedia.org/wiki/ISO_639-3), thesaurus: `person-name-languages`)
   - `tag` (`string`, optionally from thesaurus: `person-name-tags`): optional tag used to group names, typically used when a person has several names.
   - `parts`\* (`PersonNamePart[]`):
   - `type`\* (`string`, thesaurus: `person-name-types`): e.g. first name, last name, etc. Types are not unique in a name: for instance, you might have a person with 2 first names.
