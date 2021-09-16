@@ -1,6 +1,6 @@
 ﻿using Bogus;
+using Cadmus.Bricks;
 using Cadmus.Itinera.Parts;
-using Cadmus.Parts;
 using System.Collections.Generic;
 
 namespace Cadmus.Seed.Ingra.Parts

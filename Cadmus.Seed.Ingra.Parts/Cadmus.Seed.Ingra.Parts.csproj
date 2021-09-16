@@ -4,7 +4,7 @@
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <Version>1.0.3</Version>
+    <Version>1.0.4</Version>
     <Company>Fusi</Company>
     <Product>Cadmus</Product>
     <Description>Cadmus Inquisition Graffiti parts seeders</Description>
@@ -15,8 +15,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Bogus" Version="33.0.2" />
-    <PackageReference Include="Cadmus.Seed" Version="1.1.10" />
+    <PackageReference Include="Bogus" Version="33.1.1" />
+    <PackageReference Include="Cadmus.Seed" Version="1.1.12" />
   </ItemGroup>
 
   <ItemGroup>
