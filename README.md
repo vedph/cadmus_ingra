@@ -89,3 +89,7 @@ These are the parts specific to this project.
 - `links` (`TaggedId`[]):
   - `id`\* (string): graffiti ID.
   - `tag`\* (string, thesaurus: `link-reasons`): the reason for the link.
+
+## History
+
+- 2021-10-17: refactored DocReference now depending from bricks with a new model. This is a breaking change as it implies remodeling in the database parts of type `it.vedph.doc-references`: merge the author, work, location into citation following some convention.
