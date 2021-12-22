@@ -9,7 +9,6 @@ using Cadmus.Philology.Parts.Layers;
 using Cadmus.Ingra.Parts;
 using Microsoft.Extensions.Configuration;
 using IConfiguration = Microsoft.Extensions.Configuration.IConfiguration;
-using Cadmus.Itinera.Parts.Epistolography;
 
 namespace Cadmus.Ingra.Services
 {
@@ -62,14 +61,10 @@ namespace Cadmus.Ingra.Services
         /// <summary>
         /// Creates a Cadmus repository.
         /// </summary>
-        /// <param name="database">The database name.</param>
         /// <returns>repository</returns>
         /// <exception cref="ArgumentNullException">null database</exception>
-        public ICadmusRepository CreateRepository(string database)
+        public ICadmusRepository CreateRepository()
         {
-            if (database == null)
-                throw new ArgumentNullException(nameof(database));
-
             // create the repository (no need to use container here)
             MongoCadmusRepository repository =
                 new MongoCadmusRepository(
@@ -79,7 +74,8 @@ namespace Cadmus.Ingra.Services
             repository.Configure(new MongoCadmusRepositoryOptions
             {
                 ConnectionString = string.Format(
-                    _configuration.GetConnectionString("Default"), database)
+                    _configuration.GetConnectionString("Default"),
+                    _configuration.GetValue<string>("DatabaseName"))
             });
 
             return repository;

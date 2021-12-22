@@ -1,6 +1,7 @@
 ﻿using Bogus;
 using Cadmus.Bricks;
 using Cadmus.Itinera.Parts;
+using Cadmus.Refs.Bricks;
 using System.Collections.Generic;
 
 namespace Cadmus.Seed.Ingra.Parts
@@ -20,12 +21,12 @@ namespace Cadmus.Seed.Ingra.Parts
             for (int n = 1; n <= Randomizer.Seed.Next(min, max + 1); n++)
             {
                 refs.Add(new Faker<DocReference>()
+                    .RuleFor(r => r.Type, f => f.PickRandom(null, "biblio"))
                     .RuleFor(r => r.Tag, f => f.PickRandom(null, "tag"))
-                    .RuleFor(r => r.Author, f => f.Lorem.Word())
-                    .RuleFor(r => r.Work, f => f.Lorem.Word())
-                    .RuleFor(r => r.Location,
+                    .RuleFor(r => r.Citation,
                         f => $"{f.Random.Number(1, 24)}.{f.Random.Number(1, 1000)}")
-                    .RuleFor(r => r.Note, f => f.Lorem.Sentence())
+                    .RuleFor(r => r.Note, f => f.Random.Bool(0.25f)
+                        ? f.Lorem.Sentence() : null)
                     .Generate());
             }
 
