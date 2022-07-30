@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Text;
 using Cadmus.Core;
-using Cadmus.Itinera.Parts;
+using Cadmus.Refs.Bricks;
 using Fusi.Antiquity.Chronology;
 using Fusi.Tools.Config;
 
@@ -33,7 +33,7 @@ namespace Cadmus.Ingra.Parts
         /// <summary>
         /// Gets or sets the name.
         /// </summary>
-        public PersonName Name { get; set; }
+        public ProperName Name { get; set; }
 
         /// <summary>
         /// Gets or sets the birth date.

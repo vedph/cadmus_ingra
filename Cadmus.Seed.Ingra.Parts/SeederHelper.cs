@@ -1,6 +1,5 @@
 ﻿using Bogus;
 using Cadmus.Bricks;
-using Cadmus.Itinera.Parts;
 using Cadmus.Refs.Bricks;
 using System.Collections.Generic;
 
@@ -33,19 +32,19 @@ namespace Cadmus.Seed.Ingra.Parts
             return refs;
         }
 
-        public static PersonName GetPersonName()
+        public static ProperName GetPersonName()
         {
-            return new Faker<PersonName>()
+            return new Faker<ProperName>()
                 .RuleFor(pn => pn.Language, "eng")
-                .RuleFor(pn => pn.Parts, f =>
-                    new List<PersonNamePart>(new[]
+                .RuleFor(pn => pn.Pieces, f =>
+                    new List<ProperNamePiece>(new[]
                     {
-                        new PersonNamePart
+                        new ProperNamePiece
                         {
                             Type = "first",
                             Value = f.Person.FirstName,
                         },
-                        new PersonNamePart
+                        new ProperNamePiece
                         {
                             Type = "last",
                             Value = f.Person.LastName,

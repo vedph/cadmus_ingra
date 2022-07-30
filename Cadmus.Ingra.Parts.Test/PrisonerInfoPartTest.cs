@@ -4,8 +4,8 @@ using Cadmus.Core;
 using Cadmus.Seed.Ingra.Parts;
 using System.Collections.Generic;
 using System.Linq;
-using Cadmus.Itinera.Parts;
 using Fusi.Antiquity.Chronology;
+using Cadmus.Refs.Bricks;
 
 namespace Cadmus.Ingra.Parts.Test
 {
@@ -61,17 +61,17 @@ namespace Cadmus.Ingra.Parts.Test
             part.PrisonerId = "bassus";
             part.PrisonId = "p1";
             part.Sex = 'M';
-            part.Name = new PersonName
+            part.Name = new ProperName
             {
                 Language = "lat",
-                Parts = new List<PersonNamePart>(new[]
+                Pieces = new List<ProperNamePiece>(new[]
                     {
-                        new PersonNamePart
+                        new ProperNamePiece()
                         {
                             Type = "first",
                             Value = "Stephanus",
                         },
-                        new PersonNamePart
+                        new ProperNamePiece()
                         {
                             Type = "last",
                             Value = "Bassus",

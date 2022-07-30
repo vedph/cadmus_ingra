@@ -1,14 +1,13 @@
 ﻿using Cadmus.Core.Config;
 using Cadmus.Seed;
 using Cadmus.Seed.Parts.General;
-using Cadmus.Seed.Philology.Parts.Layers;
 using Cadmus.Seed.Ingra.Parts;
-using Fusi.Microsoft.Extensions.Configuration.InMemoryJson;
 using Microsoft.Extensions.Configuration;
 using SimpleInjector;
 using System;
 using System.Reflection;
-using Cadmus.Seed.Itinera.Parts.Epistolography;
+using Cadmus.Seed.Philology.Parts;
+using Fusi.Microsoft.Extensions.Configuration.InMemoryJson;
 
 namespace Cadmus.Ingra.Services
 {
@@ -42,11 +41,11 @@ namespace Cadmus.Ingra.Services
                 // Cadmus.Seed.Ingra.Parts
                 typeof(PrisonInfoPartSeeder).GetTypeInfo().Assembly,
             };
-            TagAttributeToTypeMap map = new TagAttributeToTypeMap();
+            TagAttributeToTypeMap map = new();
             map.Add(seedAssemblies);
 
             // build the container for seeders
-            Container container = new Container();
+            Container container = new();
             PartSeederFactory.ConfigureServices(
                 container,
                 new StandardPartTypeProvider(map),

@@ -92,6 +92,18 @@ These are the parts specific to this project.
 
 ## History
 
+### 1.2.0
+
+- 2022-07-30:
+  - removed legacy Itinera dependencies.
+  - replaced `PersonName` (from legacy prosopa bricks) with `ProperName` (from ref bricks). Note that this might be a breaking change for existing database records. In this case proper renaming should occur for proper name `pieces` (instead of `parts`).
+
+### 1.1.4
+
+- 2022-07-30: updated packages.
+
+### 1.1.3
+
 - 2021-12-22: updated packages.
 
 - 2021-10-17: refactored DocReference now depending from bricks with a new model. This is a breaking change as it implies remodeling in the database parts of type `it.vedph.doc-references`: merge `author`, `work`, `location` into `citation` following some convention.
