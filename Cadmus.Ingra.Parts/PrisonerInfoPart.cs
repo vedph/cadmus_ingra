@@ -33,7 +33,7 @@ namespace Cadmus.Ingra.Parts
         /// <summary>
         /// Gets or sets the name.
         /// </summary>
-        public ProperName Name { get; set; }
+        public AssertedProperName Name { get; set; }
 
         /// <summary>
         /// Gets or sets the birth date.
@@ -79,7 +79,7 @@ namespace Cadmus.Ingra.Parts
         /// <returns>The pins.</returns>
         public override IEnumerable<DataPin> GetDataPins(IItem item)
         {
-            DataPinBuilder builder = new DataPinBuilder(
+            DataPinBuilder builder = new(
                 DataPinHelper.DefaultFilter);
 
             builder.AddValue("id", PrisonerId);
@@ -171,7 +171,7 @@ namespace Cadmus.Ingra.Parts
         /// </returns>
         public override string ToString()
         {
-            StringBuilder sb = new StringBuilder();
+            StringBuilder sb = new();
 
             sb.Append("[PrisonerInfo] ").Append(PrisonerId);
             if (Name != null)

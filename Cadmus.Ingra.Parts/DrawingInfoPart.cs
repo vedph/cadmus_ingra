@@ -58,7 +58,7 @@ namespace Cadmus.Ingra.Parts
         /// <returns>The pins.</returns>
         public override IEnumerable<DataPin> GetDataPins(IItem item)
         {
-            DataPinBuilder builder = new DataPinBuilder(
+            DataPinBuilder builder = new(
                 DataPinHelper.DefaultFilter);
 
             if (Subjects?.Count > 0)
@@ -110,7 +110,7 @@ namespace Cadmus.Ingra.Parts
         /// </returns>
         public override string ToString()
         {
-            StringBuilder sb = new StringBuilder();
+            StringBuilder sb = new();
 
             sb.Append("[DrawingInfo]");
 

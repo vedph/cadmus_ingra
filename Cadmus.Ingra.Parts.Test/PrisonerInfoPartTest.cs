@@ -51,7 +51,6 @@ namespace Cadmus.Ingra.Parts.Test
             Assert.Equal(part.RoleId, part2.RoleId);
             Assert.Equal(part.CreatorId, part2.CreatorId);
             Assert.Equal(part.UserId, part2.UserId);
-            // TODO: check parts data here...
         }
 
         [Fact]
@@ -61,7 +60,7 @@ namespace Cadmus.Ingra.Parts.Test
             part.PrisonerId = "bassus";
             part.PrisonId = "p1";
             part.Sex = 'M';
-            part.Name = new ProperName
+            part.Name = new AssertedProperName
             {
                 Language = "lat",
                 Pieces = new List<ProperNamePiece>(new[]

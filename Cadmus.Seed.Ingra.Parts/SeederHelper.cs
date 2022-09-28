@@ -1,5 +1,4 @@
 ﻿using Bogus;
-using Cadmus.Bricks;
 using Cadmus.Refs.Bricks;
 using System.Collections.Generic;
 
@@ -15,7 +14,7 @@ namespace Cadmus.Seed.Ingra.Parts
         /// <returns>References.</returns>
         public static List<DocReference> GetDocReferences(int min, int max)
         {
-            List<DocReference> refs = new List<DocReference>();
+            List<DocReference> refs = new();
 
             for (int n = 1; n <= Randomizer.Seed.Next(min, max + 1); n++)
             {
@@ -32,9 +31,19 @@ namespace Cadmus.Seed.Ingra.Parts
             return refs;
         }
 
-        public static ProperName GetPersonName()
+        public static Assertion GetAssertion()
         {
-            return new Faker<ProperName>()
+            return new Faker<Assertion>()
+                .RuleFor(a => a.Tag, f => f.PickRandom("a", "b", null))
+                .RuleFor(a => a.Rank, f => f.Random.Short(1, 3))
+                .RuleFor(a => a.References, GetDocReferences(1, 2))
+                .RuleFor(a => a.Note, f => f.Lorem.Sentence().OrNull(f))
+                .Generate();
+        }
+
+        public static AssertedProperName GetPersonName()
+        {
+            return new Faker<AssertedProperName>()
                 .RuleFor(pn => pn.Language, "eng")
                 .RuleFor(pn => pn.Pieces, f =>
                     new List<ProperNamePiece>(new[]
@@ -50,6 +59,7 @@ namespace Cadmus.Seed.Ingra.Parts
                             Value = f.Person.LastName,
                         }
                     }))
+                .RuleFor(pn => pn.Assertion, GetAssertion())
                 .Generate();
         }
     }

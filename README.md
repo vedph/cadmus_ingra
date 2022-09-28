@@ -66,12 +66,13 @@ These are the parts specific to this project.
 - `prisonerId`\* (`string`)
 - `prisonId`\* (`string`)
 - `sex` (`string`): `M`, `F`, or unknown.
-- `name`\* (`PersonName`, same as in Itinera):
+- `name`\* (`AssertedProperName`):
   - `language`\* (`string` = code from [ISO 639-3](https://en.wikipedia.org/wiki/ISO_639-3), thesaurus: `person-name-languages`)
   - `tag` (`string`, optionally from thesaurus: `person-name-tags`): optional tag used to group names, typically used when a person has several names.
   - `parts`\* (`PersonNamePart[]`):
   - `type`\* (`string`, thesaurus: `person-name-types`): e.g. first name, last name, etc. Types are not unique in a name: for instance, you might have a person with 2 first names.
   - `value`\* (`string`)
+  - assertion (`Assertion`)
 - `birthDate` (`HistoricalDate`)
 - `deathDate` (`HistoricalDate`)
 - `origin` (`string`)
@@ -91,6 +92,14 @@ These are the parts specific to this project.
   - `tag`\* (string, thesaurus: `link-reasons`): the reason for the link.
 
 ## History
+
+### 1.3.0
+
+- 2022-09-27: replaced `ProperName` with AssertedProperName`.
+
+### 1.2.2
+
+- 2022-09-27: updated packages.
 
 ### 1.2.0
 

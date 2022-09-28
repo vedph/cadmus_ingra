@@ -35,7 +35,7 @@ namespace Cadmus.Ingra.Parts
         /// <returns>The pins.</returns>
         public override IEnumerable<DataPin> GetDataPins(IItem item)
         {
-            DataPinBuilder builder = new DataPinBuilder(
+            DataPinBuilder builder = new(
                 DataPinHelper.DefaultFilter);
 
             builder.AddValue("prison-id", PrisonId);
