@@ -4,11 +4,11 @@ using Cadmus.Core;
 using Cadmus.Core.Config;
 using Cadmus.Core.Storage;
 using Cadmus.Mongo;
-using Cadmus.Parts.General;
 using Cadmus.Ingra.Parts;
 using Microsoft.Extensions.Configuration;
 using IConfiguration = Microsoft.Extensions.Configuration.IConfiguration;
 using Cadmus.Philology.Parts;
+using Cadmus.General.Parts;
 
 namespace Cadmus.Ingra.Services
 {
@@ -35,12 +35,10 @@ namespace Cadmus.Ingra.Services
             TagAttributeToTypeMap map = new();
             map.Add(new[]
             {
-                // Cadmus.Parts
+                // Cadmus.General.Parts
                 typeof(NotePart).GetTypeInfo().Assembly,
                 // Cadmus.Philology.Parts
                 typeof(ApparatusLayerFragment).GetTypeInfo().Assembly,
-                // Cadmus.Itinera.Parts
-                typeof(DocReferencesPart).GetTypeInfo().Assembly,
                 // Cadmus.Ingra.Parts
                 typeof(PrisonInfoPart).GetTypeInfo().Assembly,
             });

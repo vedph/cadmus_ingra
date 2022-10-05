@@ -93,6 +93,10 @@ These are the parts specific to this project.
 
 ## History
 
+### 1.3.1
+
+- 2022-10-05: updated packages and fixed legacy part references.
+
 ### 1.3.0
 
 - 2022-09-27: replaced `ProperName` with AssertedProperName`.

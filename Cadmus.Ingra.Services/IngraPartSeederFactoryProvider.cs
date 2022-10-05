@@ -1,6 +1,5 @@
 ﻿using Cadmus.Core.Config;
 using Cadmus.Seed;
-using Cadmus.Seed.Parts.General;
 using Cadmus.Seed.Ingra.Parts;
 using Microsoft.Extensions.Configuration;
 using SimpleInjector;
@@ -8,6 +7,7 @@ using System;
 using System.Reflection;
 using Cadmus.Seed.Philology.Parts;
 using Fusi.Microsoft.Extensions.Configuration.InMemoryJson;
+using Cadmus.Seed.General.Parts;
 
 namespace Cadmus.Ingra.Services
 {
@@ -32,12 +32,10 @@ namespace Cadmus.Ingra.Services
             // build the tags to types map for parts/fragments
             Assembly[] seedAssemblies = new[]
             {
-                // Cadmus.Seed.Parts
+                // Cadmus.Seed.General.Parts
                 typeof(NotePartSeeder).Assembly,
                 // Cadmus.Seed.Philology.Parts
                 typeof(ApparatusLayerFragmentSeeder).Assembly,
-                // Cadmus.Seed.Itinera.Parts
-                typeof(DocReferencesPartSeeder).GetTypeInfo().Assembly,
                 // Cadmus.Seed.Ingra.Parts
                 typeof(PrisonInfoPartSeeder).GetTypeInfo().Assembly,
             };
