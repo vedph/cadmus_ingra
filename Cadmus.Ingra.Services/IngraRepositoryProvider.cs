@@ -5,10 +5,9 @@ using Cadmus.Core.Config;
 using Cadmus.Core.Storage;
 using Cadmus.Mongo;
 using Cadmus.Ingra.Parts;
-using Microsoft.Extensions.Configuration;
-using IConfiguration = Microsoft.Extensions.Configuration.IConfiguration;
 using Cadmus.Philology.Parts;
 using Cadmus.General.Parts;
+using Fusi.Tools.Config;
 
 namespace Cadmus.Ingra.Services
 {
@@ -16,22 +15,23 @@ namespace Cadmus.Ingra.Services
     /// Cadmus Ingra repository provider.
     /// </summary>
     /// <seealso cref="IRepositoryProvider" />
+    [Tag("repository-provider.ingra")]
     public sealed class IngraRepositoryProvider : IRepositoryProvider
     {
-        private readonly IConfiguration _configuration;
         private readonly IPartTypeProvider _partTypeProvider;
+
+        /// <summary>
+        /// The connection string.
+        /// </summary>
+        public string? ConnectionString { get; set; }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="StandardRepositoryProvider"/>
         /// class.
         /// </summary>
-        /// <param name="configuration">The configuration.</param>
         /// <exception cref="ArgumentNullException">configuration</exception>
-        public IngraRepositoryProvider(IConfiguration configuration)
+        public IngraRepositoryProvider()
         {
-            _configuration = configuration ??
-                throw new ArgumentNullException(nameof(configuration));
-
             TagAttributeToTypeMap map = new();
             map.Add(new[]
             {
@@ -69,9 +69,9 @@ namespace Cadmus.Ingra.Services
 
             repository.Configure(new MongoCadmusRepositoryOptions
             {
-                ConnectionString = string.Format(
-                    _configuration.GetConnectionString("Default"),
-                    _configuration.GetValue<string>("DatabaseNames:Data"))
+                ConnectionString = ConnectionString ??
+                    throw new InvalidOperationException(
+                    "No connection string set for IRepositoryProvider implementation")
             });
 
             return repository;

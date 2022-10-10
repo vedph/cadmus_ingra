@@ -93,6 +93,14 @@ These are the parts specific to this project.
 
 ## History
 
+### 1.4.0
+
+- 2022-10-10: updated packages for new `IRepositoryProvider`.
+
+### 1.3.2
+
+- 2022-10-10: updated packages.
+
 ### 1.3.1
 
 - 2022-10-05: updated packages and fixed legacy part references.
