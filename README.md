@@ -93,6 +93,10 @@ These are the parts specific to this project.
 
 ## History
 
+### 2.0.1
+
+- 2022-11-28: updated packages.
+
 ### 2.0.0
 
 - 2022-11-10: upgraded to NET 7.
