@@ -93,6 +93,10 @@ These are the parts specific to this project.
 
 ## History
 
+### 3.0.1
+
+- 2023-05-16: updated packages.
+
 ### 3.0.0
 
 - 2023-03-16: upgraded to [new configuration](https://myrmex.github.io/overview/cadmus/dev/history/b-config/).
