@@ -93,6 +93,10 @@ These are the parts specific to this project.
 
 ## History
 
+### 3.0.3
+
+- 2023-06-02: updated packages.
+
 ### 3.0.2
 
 - 2023-05-19: updated packages.

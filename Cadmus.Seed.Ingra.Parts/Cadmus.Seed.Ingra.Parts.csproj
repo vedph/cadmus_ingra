@@ -4,7 +4,7 @@
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <TargetFramework>net7.0</TargetFramework>
-    <Version>3.0.2</Version>
+    <Version>3.0.3</Version>
     <Company>Fusi</Company>
     <Product>Cadmus</Product>
     <Description>Cadmus Inquisition Graffiti parts seeders</Description>
@@ -12,13 +12,13 @@
     <NeutralLanguage>en-US</NeutralLanguage>
     <PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
     <PackageTags>Cadmus;ingra seed</PackageTags>
-    <FileVersion>3.0.2</FileVersion>
-    <AssemblyVersion>3.0.2</AssemblyVersion>
+    <FileVersion>3.0.3</FileVersion>
+    <AssemblyVersion>3.0.3</AssemblyVersion>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Bogus" Version="34.0.2" />
-    <PackageReference Include="Cadmus.Seed" Version="6.0.3" />
+    <PackageReference Include="Cadmus.Seed" Version="6.1.0" />
   </ItemGroup>
 
   <ItemGroup>
