@@ -50,9 +50,19 @@ These are the parts specific to this project.
 - `verse` (`string`: thesaurus: `graffiti-verses`)
 - `rhyme` (`string`)
 - `author` (`string`)
-- `identifications` (`RankedId[]`):
-  - `id` (`string`)
-  - `rank` (`short`)
+- `identifications` (`AssertedCompositeId[]`):
+  - `target` (`PinTarget`):
+	- `gid`\* (`string`)
+	- `label`\* (`string`)
+	- `itemId` (`string`)
+	- `partId` (`string`)
+	- `partTypeId` (`string`)
+	- `roleId` (`string`)
+	- `name` (`string`)
+	- `value` (`string`)
+  - `scope` (`string`)
+  - `tag` (`string`)
+  - `assertion` (`Assertion`)
 - `date` (`HistoricalDate`)
 
 #### PrisonLocationPart
@@ -92,6 +102,10 @@ These are the parts specific to this project.
   - `tag`\* (string, thesaurus: `link-reasons`): the reason for the link.
 
 ## History
+
+### 4.0.0
+
+- 2023-07-05: replaced graffiti IDs with `AssertedCompositeId`s.
 
 ### 3.0.3
 

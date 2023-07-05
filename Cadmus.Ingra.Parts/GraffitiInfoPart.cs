@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Text;
 using Cadmus.Core;
+using Cadmus.Refs.Bricks;
 using Fusi.Antiquity.Chronology;
 using Fusi.Tools.Configuration;
 
@@ -42,7 +43,7 @@ public sealed class GraffitiInfoPart : PartBase
     /// <summary>
     /// Gets or sets the identifications for the author of this graffiti.
     /// </summary>
-    public List<RankedId> Identifications { get; set; }
+    public List<AssertedCompositeId> Identifications { get; set; }
 
     /// <summary>
     /// Gets or sets the date.
@@ -55,7 +56,7 @@ public sealed class GraffitiInfoPart : PartBase
     /// </summary>
     public GraffitiInfoPart()
     {
-        Identifications = new List<RankedId>();
+        Identifications = new List<AssertedCompositeId>();
     }
 
     /// <summary>
@@ -65,7 +66,7 @@ public sealed class GraffitiInfoPart : PartBase
     /// can optionally be passed to this method for those parts requiring
     /// to access further data.</param>
     /// <returns>The pins.</returns>
-    public override IEnumerable<DataPin> GetDataPins(IItem item)
+    public override IEnumerable<DataPin> GetDataPins(IItem item = null)
     {
         DataPinBuilder builder = new(
             new StandardDataPinTextFilter());
@@ -82,7 +83,7 @@ public sealed class GraffitiInfoPart : PartBase
             builder.AddValue("author", Author, filter: true, filterOptions: true);
 
         if (Identifications?.Count > 0)
-            builder.AddValues("pid", Identifications.Select(i => i.Id));
+            builder.AddValues("pid", Identifications.Select(i => i.Target.Gid));
 
         if (Date != null)
             builder.AddValue("date-value", Date.GetSortValue());

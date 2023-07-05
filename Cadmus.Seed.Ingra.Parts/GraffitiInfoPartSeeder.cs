@@ -1,6 +1,7 @@
 ﻿using Bogus;
 using Cadmus.Core;
 using Cadmus.Ingra.Parts;
+using Cadmus.Refs.Bricks;
 using Fusi.Antiquity.Chronology;
 using Fusi.Tools.Configuration;
 using System;
@@ -16,16 +17,18 @@ namespace Cadmus.Seed.Ingra.Parts;
 [Tag("seed.it.vedph.ingra.graffiti-info")]
 public sealed class GraffitiInfoPartSeeder : PartSeederBase
 {
-    private static List<RankedId> GetIds(int min, int max)
+    private static List<AssertedCompositeId> GetIds(int min, int max)
     {
-        List<RankedId> ids = new List<RankedId>();
+        List<AssertedCompositeId> ids = new();
         int count = Randomizer.Seed.Next(min, max + 1);
         for (int n = 1; n <= count; n++)
         {
-            ids.Add(new RankedId
+            ids.Add(new AssertedCompositeId
             {
-                Id = "p" + n,
-                Rank = (short)n
+                Target = new PinTarget
+                {
+                    Gid = "http://www.prisoners.org/{n}"
+                }
             });
         }
         return ids;

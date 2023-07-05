@@ -5,6 +5,7 @@ using Cadmus.Seed.Ingra.Parts;
 using System.Collections.Generic;
 using System.Linq;
 using Fusi.Antiquity.Chronology;
+using Cadmus.Refs.Bricks;
 
 namespace Cadmus.Ingra.Parts.Test;
 
@@ -62,10 +63,12 @@ public sealed class GraffitiInfoPartTest
         part.Verse = "7s";
         part.Rhyme = "AABB";
         part.Author = "Stephanus";
-        part.Identifications.Add(new RankedId
+        part.Identifications.Add(new AssertedCompositeId
         {
-            Id = "steph",
-            Rank = 1
+            Target = new PinTarget
+            {
+                Gid = "steph",
+            }
         });
         part.Date = HistoricalDate.Parse("1500");
 
