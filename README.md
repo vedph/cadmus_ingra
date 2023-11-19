@@ -1,4 +1,4 @@
-# Cadmus Inquisition Graffiti
+﻿# Cadmus Inquisition Graffiti
 
 ## Models
 
@@ -102,6 +102,10 @@ These are the parts specific to this project.
   - `tag`\* (string, thesaurus: `link-reasons`): the reason for the link.
 
 ## History
+
+### 5.0.0
+
+- 2023-11-19: ⚠️ upgraded to .NET 8.
 
 ### 4.0.0
 
